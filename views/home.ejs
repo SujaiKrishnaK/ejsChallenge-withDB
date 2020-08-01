@@ -1,0 +1,12 @@
+<%- include partials/header.ejs -%>
+<%datapassed.forEach(function(datapass){%>
+<%if(datapass.name == "Home"){%>
+    <h1><%=datapass.name%></h1>
+    <p><%=(datapass.matter)%></p>
+<%  }else{ %>
+    <h1><%=datapass.name%></h1>
+    <p><%=(datapass.matter).slice(0,100)+"..."%></p><a href="/posts/<%= datapass.name %>"</a>Read More</a>
+<%}%>
+<%});%>
+<button type="button" class="composebutton" name="button"><a class="composelink" href="/compose">Compose</a></button>
+<%- include partials/footer.ejs -%>
